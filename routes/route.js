@@ -10,7 +10,9 @@ import {
 } from "../controller/payment-controller.js";
 
 const router = express.Router();
-
+router.get("/", (req, res) => {
+  res.send("Listening to server...");
+});
 router.post("/signup", userSignup);
 router.post("/login", userLogin);
 
