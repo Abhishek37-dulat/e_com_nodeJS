@@ -4,7 +4,7 @@ import cors from "cors";
 import { v4 as uuid } from "uuid";
 
 import Connection from "./database/db.js";
-import DefaultData from "./default.js";
+// import DefaultData from "./default.js";
 import Router from "./routes/route.js";
 import bodyParser from "body-parser";
 
@@ -16,7 +16,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use();
+// app.use();
 app.use("/", Router);
 
 const PORT = process.env.PORT || 9000;
@@ -27,7 +27,7 @@ Connection(MONGODB_URL);
 
 app.listen(PORT, () => console.log("Server is running on PORT: ", PORT));
 
-DefaultData();
+// DefaultData();
 
 export let paytmMerchantkey = process.env.PAYTM_MERCHANT_KEY;
 export let paytmParams = {};
